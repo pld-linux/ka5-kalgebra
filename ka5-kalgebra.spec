@@ -1,14 +1,15 @@
-%define		kdeappsver	18.12.1
+%define		kdeappsver	19.04.1
+%define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kalgebra
 Summary:	Kalgebra
 Name:		ka5-%{kaname}
-Version:	18.12.1
+Version:	19.04.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	236cf6afae6c15a1ba4fff48dcfb9447
+# Source0-md5:	5fa47becf50214e5543c64e7ae93d3eb
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -23,10 +24,10 @@ BuildRequires:	Qt5Widgets-devel >= 5.11.1
 BuildRequires:	Qt5Xml-devel
 BuildRequires:	cmake >= 2.8.12
 BuildRequires:	gettext-devel
-BuildRequires:	ka5-analitza-devel
-BuildRequires:	kf5-extra-cmake-modules >= 5.53.0
-BuildRequires:	kf5-kcoreaddons-devel
-BuildRequires:	kf5-ki18n-devel
+BuildRequires:	ka5-analitza-devel >= %{kdeappsver}
+BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
+BuildRequires:	kf5-kcoreaddons-devel >= %{kframever}
+BuildRequires:	kf5-ki18n-devel >= %{kframever}
 BuildRequires:	ninja
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
@@ -55,6 +56,7 @@ install -d build
 cd build
 %cmake \
 	-G Ninja \
+	-DHTML_INSTALL_DIR=%{_kdedocdir} \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	..
 %ninja_build
@@ -94,18 +96,18 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kalgebramobile/plugins/kalgebratables.json
 %{_datadir}/kalgebramobile/plugins/kalgebravariables.json
 %dir %{_datadir}/kalgebramobile/plugins/widgets
-%{_datadir}/kalgebramobile/plugins/widgets/Action.qml
+#%%{_datadir}/kalgebramobile/plugins/widgets/Action.qml
 %{_datadir}/kalgebramobile/plugins/widgets/AddButton.qml
-%{_datadir}/kalgebramobile/plugins/widgets/Button.qml
-%{_datadir}/kalgebramobile/plugins/widgets/CalcButton.qml
-%{_datadir}/kalgebramobile/plugins/widgets/ComboBox.qml
-%{_datadir}/kalgebramobile/plugins/widgets/Dialog.qml
+#%%{_datadir}/kalgebramobile/plugins/widgets/Button.qml
+#%%{_datadir}/kalgebramobile/plugins/widgets/CalcButton.qml
+#%%{_datadir}/kalgebramobile/plugins/widgets/ComboBox.qml
+#%%{_datadir}/kalgebramobile/plugins/widgets/Dialog.qml
 %{_datadir}/kalgebramobile/plugins/widgets/ExpressionInput.qml
 %{_datadir}/kalgebramobile/plugins/widgets/KAlgebraMobile.qml
 %{_datadir}/kalgebramobile/plugins/widgets/KAlgebraPage.qml
-%{_datadir}/kalgebramobile/plugins/widgets/Label.qml
+#%%{_datadir}/kalgebramobile/plugins/widgets/Label.qml
 %{_datadir}/kalgebramobile/plugins/widgets/RealInput.qml
-%{_datadir}/kalgebramobile/plugins/widgets/SimpleListView.qml
+#%%{_datadir}/kalgebramobile/plugins/widgets/SimpleListView.qml
 %{_datadir}/kalgebramobile/plugins/widgets/qmldir
 %{_datadir}/katepart5/syntax/kalgebra.xml
 %{_datadir}/kservices5/graphsplasmoid.desktop
