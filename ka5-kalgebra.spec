@@ -20,6 +20,7 @@ BuildRequires:	Qt5Qml-devel
 BuildRequires:	Qt5Quick-devel
 BuildRequires:	Qt5Svg-devel
 BuildRequires:	Qt5Test-devel
+BuildRequires:	Qt5WebEngine-devel
 BuildRequires:	Qt5Widgets-devel >= 5.11.1
 BuildRequires:	Qt5Xml-devel
 BuildRequires:	cmake >= 2.8.12
