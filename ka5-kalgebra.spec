@@ -1,15 +1,15 @@
-%define		kdeappsver	20.12.3
+%define		kdeappsver	21.04.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kalgebra
 Summary:	Kalgebra
 Name:		ka5-%{kaname}
-Version:	20.12.3
+Version:	21.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	4e1ab3fce3bc7d7e90a255b898703a3f
+# Source0-md5:	47008609de8b732e75a21a0578c0967b
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -84,36 +84,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/org.kde.kalgebramobile.desktop
 %{_iconsdir}/hicolor/64x64/apps/kalgebra.png
 %{_iconsdir}/hicolor/scalable/apps/kalgebra.svgz
-%dir %{_datadir}/kalgebramobile
-%dir %{_datadir}/kalgebramobile/plugins
-%{_datadir}/kalgebramobile/plugins/About.qml
-%{_datadir}/kalgebramobile/plugins/Console.qml
-%{_datadir}/kalgebramobile/plugins/Dictionary.qml
-%{_datadir}/kalgebramobile/plugins/Plot2D.qml
-%{_datadir}/kalgebramobile/plugins/Plot3D.qml
-%{_datadir}/kalgebramobile/plugins/Tables.qml
-%{_datadir}/kalgebramobile/plugins/VariablesView.qml
-%{_datadir}/kalgebramobile/plugins/kalgebraabout.json
-%{_datadir}/kalgebramobile/plugins/kalgebraconsole.json
-%{_datadir}/kalgebramobile/plugins/kalgebradictionary.json
-%{_datadir}/kalgebramobile/plugins/kalgebraplot2d.json
-%{_datadir}/kalgebramobile/plugins/kalgebraplot3d.json
-%{_datadir}/kalgebramobile/plugins/kalgebratables.json
-%{_datadir}/kalgebramobile/plugins/kalgebravariables.json
-%dir %{_datadir}/kalgebramobile/plugins/widgets
-#%%{_datadir}/kalgebramobile/plugins/widgets/Action.qml
-%{_datadir}/kalgebramobile/plugins/widgets/AddButton.qml
-#%%{_datadir}/kalgebramobile/plugins/widgets/Button.qml
-#%%{_datadir}/kalgebramobile/plugins/widgets/CalcButton.qml
-#%%{_datadir}/kalgebramobile/plugins/widgets/ComboBox.qml
-#%%{_datadir}/kalgebramobile/plugins/widgets/Dialog.qml
-%{_datadir}/kalgebramobile/plugins/widgets/ExpressionInput.qml
-%{_datadir}/kalgebramobile/plugins/widgets/KAlgebraMobile.qml
-%{_datadir}/kalgebramobile/plugins/widgets/KAlgebraPage.qml
-#%%{_datadir}/kalgebramobile/plugins/widgets/Label.qml
-%{_datadir}/kalgebramobile/plugins/widgets/RealInput.qml
-#%%{_datadir}/kalgebramobile/plugins/widgets/SimpleListView.qml
-%{_datadir}/kalgebramobile/plugins/widgets/qmldir
 %{_datadir}/katepart5/syntax/kalgebra.xml
 %{_datadir}/kservices5/graphsplasmoid.desktop
 %{_datadir}/metainfo/org.kde.kalgebra.appdata.xml
