@@ -54,6 +54,16 @@ language is deeply integrated with the UI, providing a dictionary with
 representations for all the available operations, code highlighting
 and code completion.
 
+%description -l pl.UTF-8
+KAlgebra jest wszechstronnym kalkulatorem, pozwalającym rysować
+różne typy funkcji dwu- i trójwymiarowych i przeliczać łatwe (i nie tylko)
+operacje matematycze, jak dodawanie, funkcje trygonometryczne i pochodne.
+
+Aplikacja została pomyślana tak, aby była stopniowo rozumiana przez studentów.
+Język jest głęboko zintegrowany z interfejsem użykownika, dostarczając słownik
+z reprezentacją wszystkich dostępnych operacji, a także podświetlanie kodu
+i podpowiadanie dopełnień.
+
 %prep
 %setup -q -n %{kaname}-%{version}
 
