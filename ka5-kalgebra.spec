@@ -5,7 +5,7 @@
 Summary:	Kalgebra
 Name:		ka5-%{kaname}
 Version:	21.08.0
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -20,7 +20,7 @@ BuildRequires:	Qt5Qml-devel
 BuildRequires:	Qt5Quick-devel
 BuildRequires:	Qt5Svg-devel
 BuildRequires:	Qt5Test-devel
-BuildRequires:	Qt5WebEngine-devel
+BuildRequires:	Qt5WebEngine-devel >= 5.15.5
 BuildRequires:	Qt5Widgets-devel >= 5.11.1
 BuildRequires:	Qt5Xml-devel
 BuildRequires:	cmake >= 2.8.12
