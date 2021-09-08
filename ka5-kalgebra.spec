@@ -55,14 +55,15 @@ representations for all the available operations, code highlighting
 and code completion.
 
 %description -l pl.UTF-8
-KAlgebra jest wszechstronnym kalkulatorem, pozwalającym rysować
-różne typy funkcji dwu- i trójwymiarowych i przeliczać łatwe (i nie tylko)
-operacje matematycze, jak dodawanie, funkcje trygonometryczne i pochodne.
+KAlgebra jest wszechstronnym kalkulatorem, pozwalającym rysować różne
+typy funkcji dwu- i trójwymiarowych i przeliczać łatwe (i nie tylko)
+operacje matematycze, jak dodawanie, funkcje trygonometryczne i
+pochodne.
 
-Aplikacja została pomyślana tak, aby była stopniowo rozumiana przez studentów.
-Język jest głęboko zintegrowany z interfejsem użykownika, dostarczając słownik
-z reprezentacją wszystkich dostępnych operacji, a także podświetlanie kodu
-i podpowiadanie dopełnień.
+Aplikacja została pomyślana tak, aby była stopniowo rozumiana przez
+studentów. Język jest głęboko zintegrowany z interfejsem użykownika,
+dostarczając słownik z reprezentacją wszystkich dostępnych operacji, a
+także podświetlanie kodu i podpowiadanie dopełnień.
 
 %prep
 %setup -q -n %{kaname}-%{version}
@@ -89,19 +90,19 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/calgebra
-%attr(755,root,root) %{_bindir}/kalgebra
+#%attr(755,root,root) %{_bindir}/kalgebra
 %attr(755,root,root) %{_bindir}/kalgebramobile
-%{_desktopdir}/org.kde.kalgebra.desktop
+#%{_desktopdir}/org.kde.kalgebra.desktop
 %{_desktopdir}/org.kde.kalgebramobile.desktop
 %{_iconsdir}/hicolor/64x64/apps/kalgebra.png
 %{_iconsdir}/hicolor/scalable/apps/kalgebra.svgz
-%{_datadir}/katepart5/syntax/kalgebra.xml
-%{_datadir}/kservices5/graphsplasmoid.desktop
-%{_datadir}/metainfo/org.kde.kalgebra.appdata.xml
+#%{_datadir}/katepart5/syntax/kalgebra.xml
+#%{_datadir}/kservices5/graphsplasmoid.desktop
+#%{_datadir}/metainfo/org.kde.kalgebra.appdata.xml
 %{_datadir}/metainfo/org.kde.kalgebramobile.appdata.xml
-%dir %{_datadir}/plasma/plasmoids/org.kde.graphsplasmoid
-%dir %{_datadir}/plasma/plasmoids/org.kde.graphsplasmoid/contents
-%dir %{_datadir}/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui
-%{_datadir}/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/config.ui
-%{_datadir}/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/main.qml
-%{_datadir}/plasma/plasmoids/org.kde.graphsplasmoid/metadata.desktop
+#dir %{_datadir}/plasma/plasmoids/org.kde.graphsplasmoid
+#dir %{_datadir}/plasma/plasmoids/org.kde.graphsplasmoid/contents
+#dir %{_datadir}/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui
+#%{_datadir}/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/config.ui
+#%{_datadir}/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/main.qml
+#%{_datadir}/plasma/plasmoids/org.kde.graphsplasmoid/metadata.desktop
