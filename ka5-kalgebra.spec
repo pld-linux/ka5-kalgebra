@@ -5,7 +5,7 @@
 Summary:	Kalgebra
 Name:		ka5-%{kaname}
 Version:	21.08.0
-Release:	2
+Release:	3
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -90,19 +90,8 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/calgebra
-#%attr(755,root,root) %{_bindir}/kalgebra
 %attr(755,root,root) %{_bindir}/kalgebramobile
-#%{_desktopdir}/org.kde.kalgebra.desktop
 %{_desktopdir}/org.kde.kalgebramobile.desktop
 %{_iconsdir}/hicolor/64x64/apps/kalgebra.png
 %{_iconsdir}/hicolor/scalable/apps/kalgebra.svgz
-#%{_datadir}/katepart5/syntax/kalgebra.xml
-#%{_datadir}/kservices5/graphsplasmoid.desktop
-#%{_datadir}/metainfo/org.kde.kalgebra.appdata.xml
 %{_datadir}/metainfo/org.kde.kalgebramobile.appdata.xml
-#dir %{_datadir}/plasma/plasmoids/org.kde.graphsplasmoid
-#dir %{_datadir}/plasma/plasmoids/org.kde.graphsplasmoid/contents
-#dir %{_datadir}/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui
-#%{_datadir}/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/config.ui
-#%{_datadir}/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/main.qml
-#%{_datadir}/plasma/plasmoids/org.kde.graphsplasmoid/metadata.desktop
