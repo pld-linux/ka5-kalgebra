@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	23.04.3
+%define		kdeappsver	23.08.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kalgebra
 Summary:	Kalgebra
 Name:		ka5-%{kaname}
-Version:	23.04.3
+Version:	23.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	bb944ef0d9ac093a4841fafc9b886725
+# Source0-md5:	4aa638c558457e25e367272258eda39d
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -26,7 +26,7 @@ BuildRequires:	Qt5Test-devel
 BuildRequires:	Qt5WebEngine-devel >= 5.15.5
 BuildRequires:	Qt5Widgets-devel >= 5.11.1
 BuildRequires:	Qt5Xml-devel
-BuildRequires:	cmake >= 2.8.12
+BuildRequires:	cmake >= 3.20
 BuildRequires:	gettext-devel
 BuildRequires:	ka5-analitza-devel >= %{kdeappsver}
 BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
@@ -58,32 +58,31 @@ representations for all the available operations, code highlighting
 and code completion.
 
 %description -l pl.UTF-8
-KAlgebra jest wszechstronnym kalkulatorem, pozwalającym rysować różne
-typy funkcji dwu- i trójwymiarowych i przeliczać łatwe (i nie tylko)
-operacje matematycze, jak dodawanie, funkcje trygonometryczne i
-pochodne.
+KAlgebra jest wszechstronnym kalkulatorem, pozwalającym rysować
+różne typy funkcji dwu- i trójwymiarowych i przeliczać łatwe (i
+nie tylko) operacje matematycze, jak dodawanie, funkcje
+trygonometryczne i pochodne.
 
 Aplikacja została pomyślana tak, aby była stopniowo rozumiana przez
-studentów. Język jest głęboko zintegrowany z interfejsem użykownika,
-dostarczając słownik z reprezentacją wszystkich dostępnych operacji, a
-także podświetlanie kodu i podpowiadanie dopełnień.
+studentów. Język jest głęboko zintegrowany z interfejsem
+użykownika, dostarczając słownik z reprezentacją wszystkich
+dostępnych operacji, a także podświetlanie kodu i podpowiadanie
+dopełnień.
 
 %prep
 %setup -q -n %{kaname}-%{version}
 
 %build
-install -d build
-cd build
 %cmake \
+	-B build \
 	-G Ninja \
 	%{!?with_tests:-DBUILD_TESTING=OFF} \
 	-DHTML_INSTALL_DIR=%{_kdedocdir} \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
-	..
-%ninja_build
+	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON
+%ninja_build -C build
 
 %if %{with tests}
-ctest
+ctest --test-dir build
 %endif
 
 
@@ -107,6 +106,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/metainfo/org.kde.kalgebramobile.appdata.xml
 %{_desktopdir}/org.kde.kalgebra.desktop
 %{_datadir}/katepart5/syntax/kalgebra.xml
-%{_datadir}/kservices5/graphsplasmoid.desktop
+%{_datadir}/metainfo/org.kde.graphsplasmoid.appdata.xml
 %{_datadir}/metainfo/org.kde.kalgebra.appdata.xml
 %{_datadir}/plasma/plasmoids/org.kde.graphsplasmoid
